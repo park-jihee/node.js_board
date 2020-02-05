@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/park-jihee/node.js_board/issues"
   },
-  "homepage": "https://github.com/park-jihee/node.js_board#readme"
+  "homepage": "https://github.com/park-jihee/node.js_board#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
