@@ -3,6 +3,20 @@ var express = require('express');
 var app = express();
 //express module은 함수이다. 
 var path = require('path');
+var mongoose = require('mongoose');
+
+var promise = mongoose.connect("mongodb+srv://test_username:<password>@cluster0-twcni.mongodb.net/test?retryWrites=true&w=majority", {
+    useMongoClient: true
+});
+
+var db = mongoose.connection;
+db.once("open", function () {
+    console.log("DB Connected!");
+});
+
+db.on("error", function (err) {
+    console.log("DB ERROR : ", err);
+});
 
 app.set("view engine", 'ejs');
 //express에게 ejs를 view engine으로 사용할 것을 알린다.
